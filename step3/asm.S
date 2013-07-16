@@ -20,7 +20,7 @@ ENTRY(square_int_stack_frame)
                         # now we can push as many things
                         # on the stack and still address the
                         # parameter as 8(%ebp)
-    sub $10, %esp       # we can for reserve few bytes
+    sub $16, %esp       # we can for reserve few bytes
                         # for the stack frame, why not!
 
     mov 8(%ebp), %eax   # a parameter relative to %ebp
@@ -31,7 +31,7 @@ ENTRY(square_int_stack_frame)
     ret
 
 ENTRY(square_int_enter)
-    enter $10, $0
+    enter $16, $0
 
     mov 8(%ebp), %eax
     imul %eax, %eax
