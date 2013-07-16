@@ -21,7 +21,7 @@ ENTRY(square_int_stack_frame)
                         # on the stack and still address the
                         # parameter as 8(%ebp)
     sub $16, %esp       # we can for reserve few bytes
-                        # for the stack frame, and can push
+                        # for the stack frame, and push
     push $0xDEADBEEF    # anything on the stack
 
     mov 8(%ebp), %eax   # a parameter relative to %ebp
